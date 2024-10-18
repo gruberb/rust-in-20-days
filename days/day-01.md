@@ -1,4 +1,4 @@
-## Setup Rust locally
+# Setting up Rust
 
 You can [install Rust](https://www.rust-lang.org/tools/install) on UNIX systems with this shell command:
 
@@ -21,7 +21,29 @@ Now you can format your code with `cargo fmt`.
 
 The second, `cargo`, is Rust's package manager. You create projects with it, install third party depdencies, build and run Rust programs with.
 
-## A first Rust project
+# Tooling
+
+## Rust Language Server
+
+You need to install the [Rust Analyzer](https://rust-analyzer.github.io/manual.html#installation) to get auto-completion etc. in your IDE or code editor. You can install this via `rustup`:
+```bash
+rustup component add rust-analyzer
+```
+
+Or manually:
+```bash
+$ mkdir -p ~/.local/bin
+$ curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+$ chmod +x ~/.local/bin/rust-analyzer
+```
+
+
+## IDEs
+* For larger projects, I recommend using [RustRover](https://www.jetbrains.com/rust/). It helps navigating large and complex code bases, and gives enough help to work with Rust for the first time.
+* For smaller projects, [Zed](https://zed.dev/) is a perfect IDE. It gives enough help, and also supports [VIM mode](https://zed.dev/docs/vim).
+
+
+# A first Rust project
 
 You already have everything you need to create and run Rust programs now.
 
