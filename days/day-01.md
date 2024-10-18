@@ -8,9 +8,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 This will look different if you want to [install Rust on Windows](https://forge.rust-lang.org/infra/other-installation-methods.html).
 
-## Tooling
+## CLI
 
-This bash script installed a tool called `rustup` and `cargo`.
+This bash script installed two tools: `rustup` and `cargo`.
 
 The first, `rustup`, is your toolchain installer. You can use it to update your Rust version and install different compile targets. You can also install components with it, like the Rust formatter:
 ```bash
