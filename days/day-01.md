@@ -41,7 +41,7 @@ $ chmod +x ~/.local/bin/rust-analyzer
 ## IDEs
 * For larger projects, I recommend using [RustRover](https://www.jetbrains.com/rust/). It helps navigating large and complex code bases, and gives enough help to work with Rust for the first time.
 * For smaller projects, [Zed](https://zed.dev/) is a perfect IDE. It gives enough help, and also supports [VIM mode](https://zed.dev/docs/vim).
-
+* If you want to stay on the terminal, [helix](https://helix-editor.com/) is a modern, batteries-included editor for the command line.
 
 # A first Rust project
 
