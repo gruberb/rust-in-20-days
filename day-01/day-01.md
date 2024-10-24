@@ -239,7 +239,7 @@ Calling `bookmarks.iter()` gives you an iterator that can be used to access "Boo
 
 This is where it is important to get behind the idea of strictly typed languages. Every type has capabilities, and working with your bookmarks vector, you have to ask yourself: "What can a vector do?". The easiest way to find out is to have auto-completion and language hints in your IDE:
 
-![Rust autocompletion for your IDE](https://raw.githubusercontent.com/gruberb/rust-in-20-days/day-01/days/ide.png)
+![Rust autocompletion for your IDE](https://github.com/gruberb/rust-in-20-days/blob/main/day-01/ide.png?raw=true)
 
 Later on, you will have to get used to opening up a browser window, and navigating to the [Rust docs of the iterator](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.enumerate) and find methods it is implementing.
 
