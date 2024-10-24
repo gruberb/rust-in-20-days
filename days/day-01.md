@@ -18,8 +18,10 @@ In learning programming languages, there can be a moment of "Oh my, what else is
 * Error handling
 * How to navigate the Rust documentation
 * (Generics, but this is not needed for a while, and not as complex as you might think)
-* (Lifetimes, but you might never face lifetime, and on some level, not as complex as you think)
+* (Lifetimes, but you might never face lifetimes, and on some level, not as complex as you think)
 * (Macros, but you may not ever need to write your own, and it's just important to know how they generally work)
+
+You can write Rust applications, productively, for years on end, without ever having to see a lifetime, a generic or write your own macros. Once you are familiar with Rust (as with any other language), adding one more thing isn't as hard as thinking you need to learn and understand these concepts first before you can call yourself proficient in Rust.
 
 With this being said, let's have some fun with Rust!
 
