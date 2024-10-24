@@ -39,14 +39,15 @@ This will look different if you want to [install Rust on Windows](https://forge.
 
 This bash script installed two tools: `rustup` and `cargo`.
 
-The first, `rustup`, is your toolchain installer. You can use it to update your Rust version and install different compile targets. You can also install components with it, like the Rust formatter:
+* The first, `rustup`, is your toolchain installer. You can use it to update your Rust version and install different compile targets.
+* The second, `cargo`, is Rust's package manager. You create projects with it, install third party depdencies, build and run Rust programs with.
+
+You can also install components with it, like the Rust formatter:
 ```bash
 rustup component add rustfmt
 ```
 
 Now you can format your code with `cargo fmt`.
-
-The second, `cargo`, is Rust's package manager. You create projects with it, install third party depdencies, build and run Rust programs with.
 
 ## Tooling
 
