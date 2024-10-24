@@ -1,4 +1,16 @@
-# Setting up Rust
+# Day 1: Getting started with Rust
+
+Before we start, **there are a few, very important mindsets* to adopt before switching from, let's say Python, to Rust:
+
+* You won't be able to *know* the whole language (and you don't need you).
+* Read documentation. In Rust, knowing what types are and what they can do is the most important thing. [The documentation](https://doc.rust-lang.org) is your go-to tool. Crates (Rusts third-party libraries) also come with documentation by default.
+* Rust code can look complex, but this is more often than not, enforced by the compiler. Don't think people are smarter just because their code looks "weirdly complex". You will get used to reading Rust code.
+* The compiler is first your enemy, and then your best friend. It takes a while to get used to not working with running code (like in scripting languages) and fix errors along the way. In Rust, you work **with** the compiler to make sure your code is correct *before* it runs.
+* It takes a few weeks to get used to Rust. Once you are, it is hard to go back to a language without such a great type system and compiler. Keep at it, don't try to see progress every day. Give yourself a fixed time slot of 20 days to just work on the course.
+
+With this being said, let's have some fun with Rust!
+
+## Setting up Rust
 
 You can [install Rust](https://www.rust-lang.org/tools/install) on UNIX systems with this shell command:
 
@@ -21,9 +33,9 @@ Now you can format your code with `cargo fmt`.
 
 The second, `cargo`, is Rust's package manager. You create projects with it, install third party depdencies, build and run Rust programs with.
 
-# Tooling
+## Tooling
 
-## Rust Language Server
+### Rust Language Server
 
 You need to install the [Rust Analyzer](https://rust-analyzer.github.io/manual.html#installation) to get auto-completion etc. in your IDE or code editor. You can install this via `rustup`:
 ```bash
@@ -37,89 +49,137 @@ $ curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/ru
 $ chmod +x ~/.local/bin/rust-analyzer
 ```
 
-
-## IDEs
+### IDEs
 * For larger projects, I recommend using [RustRover](https://www.jetbrains.com/rust/). It helps navigating large and complex code bases, and gives enough help to work with Rust for the first time.
 * For smaller projects, [Zed](https://zed.dev/) is a perfect IDE. It gives enough help, and also supports [VIM mode](https://zed.dev/docs/vim).
 * If you want to stay on the terminal, [helix](https://helix-editor.com/) is a modern, batteries-included editor for the command line.
 
-# A first Rust project
+# Kick-off the project
 
-You already have everything you need to create and run Rust programs now.
-
-Create a new project with `cargo new mozilla-rust-workshop`.
+You have everything ready to become a Rust developer. Go ahead and create our project.
 
 ```bash
-> cargo new rust-in-20-days
-    Creating binary (application) `rust-in-20-days` package
-note: see more `Cargo.toml` keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+> cargo new firemarks
+> cd firemarks
 ```
 
-You can `cd` into the folder and see what was created:
-
-```bash
-> cd rust-in-20-days
-> tree .
-.
-├── Cargo.toml
-└── src
-    └── main.rs
-
-2 directories, 2 files
-```
-
-The `Cargo.toml` file is your so-called `manifest`. It contains the `name` of the project, and all the `dependencies` the program needs to compile. You can [check out the docs](https://doc.rust-lang.org/cargo/reference/manifest.html) to get a detailed view.
-
-```toml
-[package]
-name = "rust-in-20-days"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-```
-
-The `cargo new` command also created our first hello world program (in `src/main.rs`)
-
-```rust
-fn main() {
-    println!("Hello, world!");
-}
-```
-
-You can run it via `cargo run`:
+You can even run it and see what it will print out:
 
 ```bash
 > cargo run
-   Compiling mozilla-rust-workshop v0.1.0 (/rust-in-20-days)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.01s
-     Running `target/debug/rust-in-20-days`
-Hello, world!
+   Compiling rust-in-20-days v0.1.0 (/firemarks)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.39s
+     Running `target/debug/firemarks`
+Hello, World!
 ```
 
-This command tells you multiple things:
+## Core Concepts
 
-* Rust programs have to be compiled before they can run.
-* The created binary lives in the `target` folder.
-* The profile it is using to compile is called `dev`.
+We will go through a first set of important concepts. We won't cover all, and you will get used to learning as you go. Don't feel like you need to know everything to be productive in Rust.
 
-If you create binaries for production, you would use the `cargo build --release` command. You can also use `cargo build` and then run the binary directly:
+That's also your chance to try out the excellent [Rust Playground](https://play.rust-lang.org/). Especially in the beginning, if you want to figure out why certain pieces of code don't work, make a small example and run it in the browser.
 
-```bash
-> cargo build
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s
-> ./target/debug/rust-in-20-days
-Hello, world!
+### Variables and Types
+
+##### Variables
+
+In Rust, variables are immutable by default.
+
+```rust
+// Immutable - cannot be changed
+let x = 5;
+x = 6; // ERROR!
+
+// Mutable - can be changed
+let mut y = 5;
+y = 6;
 ```
 
-The command `cargo run` combines these two into one. Running `cargo build --release` creates an optimized binary in the `release` folder:
+You can also "shadow" variables, so you don't have to reinvent new names in longer function bodys:
 
-```bash
-> cargo build --release
-   Compiling mozilla-rust-workshop v0.1.0 (/rust-in-20-days)
-    Finished `release` profile [optimized] target(s) in 0.36s
-> ./target/release/mozilla-rust-workshop
-Hello, world!
+```rust
+let name = "Rust";
+println!("{}", name);  // Prints: Rust
+
+// We will cover Strings in a bit.
+let name = "Hello, ".to_string() + name;  // Shadows the previous `name`
+println!("{}", name);  // Prints: Hello, Rust
 ```
 
-Go ahead and change the text in the `prinln!` call to ""Welcome to Firemarks!" and run it again.
+##### Basic types
+
+Rust is statically typed, but it can infer types:
+
+```rust
+let number = 5;    // Rust infers i32
+let float = 5.0;   // Rust infers f64
+let boolean = true;// Rust infers bool
+```
+
+You can also be explicit about the type (and sometimes in larger code bases, you might have to help the compiler with that technique):
+
+```rust
+let number: i32 = 5;
+let float: f64 = 5.0;
+let boolean: bool = true;
+```
+
+##### Understanding Strings
+
+This is one of the most important concepts in Rust. There are two main string types:
+
+**String Slice (&str)**
+* Think of it as "borrowing" text
+* Fixed length
+* Cannot be modified
+* Like looking at text through a window
+
+```rust
+let text: &str = "Hello";  // String literal
+```
+
+**String**
+
+* Owned text that you can modify
+* Can grow or shrink
+* Lives on the heap
+* Like having your own copy of text that you can change
+
+```rust
+let text: String = String::from("Hello");
+```
+
+**Key differences**
+* Use &str when you just need to read text
+* Use String when you need to modify text or own it
+
+##### Understanding Vectors
+
+A vector is a growable array. Think of it as a list that can change size.
+
+```rust
+// Create an empty vector
+let mut list = Vec::new();
+
+// Add items
+list.push("item");
+
+// Read items
+let first = list[0];
+```
+
+##### Input/Output Basics
+
+Rust handles I/O through the standard library:
+
+```rust
+use std::io::{self, Write};
+
+// Reading input
+let mut input = String::new();
+io::stdin().read_line(&mut input)?;
+
+// Writing output
+println!("Hello!");  // With newline
+print!("Hello!");    // Without newline
+```
