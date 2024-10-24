@@ -6,23 +6,30 @@ This guide is very practical and pragmatic. It focusses on the things you *need*
 
 ## Content
 
+### Week 1 - CLI Fundamentals
 - [Day 1 - Introduction to Rust and Setting Up the Environment](https://github.com/gruberb/rust-in-20-days/blob/main/day-01/day-01.md)
-- [Day 2 - Basic Syntax and Hello World](https://github.com/gruberb/rust-in-20-days/blob/main/day-02/day-02.md)
-- [Day 3 - Variables, Mutability, and Data Types](https://github.com/gruberb/rust-in-20-days/blob/main/day-03/day-03.md)
-- [Day 4 - Control Flow (if, match, loops)](https://github.com/gruberb/rust-in-20-days/blob/main/day-04/day-04.md)
-- [Day 5 - Functions and Modules](https://github.com/gruberb/rust-in-20-days/blob/main/day-05/day-05.md)
-- [Day 6 - Structs and Enums](https://github.com/gruberb/rust-in-20-days/blob/main/day-06/day-06.md)
-- [Day 7 - Implementing Methods](https://github.com/gruberb/rust-in-20-days/blob/main/day-07/day-07.md)
-- [Day 8 - Collections (Vectors and HashMaps)](https://github.com/gruberb/rust-in-20-days/blob/main/day-08/day-08.md)
-- [Day 9 - Error Handling with Result and Option](https://github.com/gruberb/rust-in-20-days/blob/main/day-09/day-09.md)
-- [Day 10 - Command-Line Argument Parsing](https://github.com/gruberb/rust-in-20-days/blob/main/day-10/day-10.md)
-- [Day 11 - File I/O Operations](https://github.com/gruberb/rust-in-20-days/blob/main/day-11/day-11.md)
-- [Day 12 - Serialization and Deserialization](https://github.com/gruberb/rust-in-20-days/blob/main/day-12/day-12.md)
-- [Day 13 - Introducing SQLite Storage](https://github.com/gruberb/rust-in-20-days/blob/main/day-13/day-13.md)
-- [Day 14 - Advanced SQLite Operations](https://github.com/gruberb/rust-in-20-days/blob/main/day-14/day-14.md)
-- [Day 15 - Basic Testing](https://github.com/gruberb/rust-in-20-days/blob/main/day-15/day-15.md)
-- [Day 16 - Refactoring and Code Organization](https://github.com/gruberb/rust-in-20-days/blob/main/day-16/day-16.md)
-- [Day 17 - Introduction to Web Servers with Axum](https://github.com/gruberb/rust-in-20-days/blob/main/day-17/day-17.md)
-- [Day 18 - Building RESTful APIs](https://github.com/gruberb/rust-in-20-days/blob/main/day-18/day-18.md)
-- [Day 19 - Connecting the Web Server to SQLite](https://github.com/gruberb/rust-in-20-days/blob/main/day-19/day-19.md)
-- [Day 20 - Logging and Deployment](https://github.com/gruberb/rust-in-20-days/blob/main/day-20/day-20.md)
+- [Day 2 - Structured Data](https://github.com/gruberb/rust-in-20-days/blob/main/day-02/day-02.md)
+- [Day 3 - Error Handling](https://github.com/gruberb/rust-in-20-days/blob/main/day-03/day-03.md)
+- [Day 4 - Command Line Arguments](https://github.com/gruberb/rust-in-20-days/blob/main/day-04/day-04.md)
+- [Day 5 - File I/O](https://github.com/gruberb/rust-in-20-days/blob/main/day-05/day-05.md)
+
+### Week 2 - Advanced CLI & Testing
+- [Day 6 - Collections & Ownership](https://github.com/gruberb/rust-in-20-days/blob/main/day-06/day-06.md)
+- [Day 7 - Traits](https://github.com/gruberb/rust-in-20-days/blob/main/day-07/day-07.md)
+- [Day 8 - Unit Testing](https://github.com/gruberb/rust-in-20-days/blob/main/day-08/day-08.md)
+- [Day 9 - Custom Errors](https://github.com/gruberb/rust-in-20-days/blob/main/day-09/day-09.md)
+- [Day 10 - Async Foundations](https://github.com/gruberb/rust-in-20-days/blob/main/day-10/day-10.md)
+
+### Week 3 - Web Server
+- [Day 11 - Basic Axum Setup](https://github.com/gruberb/rust-in-20-days/blob/main/day-11/day-11.md)
+- [Day 12 - REST API Basics](https://github.com/gruberb/rust-in-20-days/blob/main/day-12/day-12.md)
+- [Day 13 - Request Handling](https://github.com/gruberb/rust-in-20-days/blob/main/day-13/day-13.md)
+- [Day 14 - Database Integration](https://github.com/gruberb/rust-in-20-days/blob/main/day-14/day-14.md)
+- [Day 15 - Authentication](https://github.com/gruberb/rust-in-20-days/blob/main/day-15/day-15.md)
+
+### Week 4 - Advanced Web Features
+- [Day 16 - API Testing](https://github.com/gruberb/rust-in-20-days/blob/main/day-16/day-16.md)
+- [Day 17 - Concurrent Operations](https://github.com/gruberb/rust-in-20-days/blob/main/day-17/day-17.md)
+- [Day 18 - WebSocket Support](https://github.com/gruberb/rust-in-20-days/blob/main/day-18/day-18.md)
+- [Day 19 - Docker & Deployment](https://github.com/gruberb/rust-in-20-days/blob/main/day-19/day-19.md)
+- [Day 20 - Documentation & API Docs](https://github.com/gruberb/rust-in-20-days/blob/main/day-20/day-20.md)
