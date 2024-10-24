@@ -11,7 +11,7 @@ Before we start, **there are a few, very important mindsets** to adopt before sw
 In learning programming languages, there can be a moment of "Oh my, what else is there? How much do I need to know?". In Rust, you need to know the following concepts to be able to navigate the language and figure things out for yourself:
 
 * Basic types
-* Creating your own types (via `struct`)
+* Creating your own types (via `struct` and `enum`)
 * Traits
 * Default implemantation of traits
 * Ownership and Borrowing
