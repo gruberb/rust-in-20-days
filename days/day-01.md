@@ -1,6 +1,6 @@
 # Day 1: Getting started with Rust
 
-Before we start, **there are a few, very important mindsets* to adopt before switching from, let's say Python, to Rust:
+Before we start, **there are a few, very important mindsets** to adopt before switching from, let's say Python, to Rust:
 
 * You won't be able to *know* the whole language (and you don't need you).
 * Read documentation. In Rust, knowing what types are and what they can do is the most important thing. [The documentation](https://doc.rust-lang.org) is your go-to tool. Crates (Rusts third-party libraries) also come with documentation by default.
@@ -94,7 +94,7 @@ That's also your chance to try out the excellent [Rust Playground](https://play.
 
 ### Variables and Types
 
-##### Variables
+#### Variables
 
 In Rust, variables are immutable by default.
 
@@ -119,7 +119,7 @@ let name = "Hello, ".to_string() + name;  // Shadows the previous `name`
 println!("{}", name);  // Prints: Hello, Rust
 ```
 
-##### Basic types
+#### Basic types
 
 Rust is statically typed, but it can infer types:
 
@@ -137,7 +137,7 @@ let float: f64 = 5.0;
 let boolean: bool = true;
 ```
 
-##### Understanding Strings
+### Understanding Strings
 
 This is one of the most important concepts in Rust. There are two main string types:
 
@@ -166,7 +166,7 @@ let text: String = String::from("Hello");
 * Use &str when you just need to read text
 * Use String when you need to modify text or own it
 
-##### Understanding Vectors
+### Understanding Vectors
 
 A vector is a growable array. Think of it as a list that can change size.
 
@@ -181,7 +181,7 @@ list.push("item");
 let first = list[0];
 ```
 
-##### Input/Output Basics
+### Input/Output Basics
 
 Rust handles I/O through the standard library:
 
