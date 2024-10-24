@@ -6,7 +6,7 @@ This guide is very practical and pragmatic. It focusses on the things you *need*
 
 ## Content
 
-- [Day 1 - Introduction to Rust and Setting Up the Environment](https://github.com/gruberb/rust-in-20-days/tree/day-01)
+- [Day 1 - Introduction to Rust and Setting Up the Environment](https://github.com/gruberb/rust-in-20-days/blob/day-01/days/day-01.md)
 - [Day 2 - Basic Syntax and Hello World](https://github.com/gruberb/rust-in-20-days/tree/day-02)
 - [Day 3 - Variables, Mutability, and Data Types](https://github.com/gruberb/rust-in-20-days/tree/day-03)
 - [Day 4 - Control Flow (if, match, loops)](https://github.com/gruberb/rust-in-20-days/tree/day-04)
