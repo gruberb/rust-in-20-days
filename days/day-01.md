@@ -8,6 +8,19 @@ Before we start, **there are a few, very important mindsets* to adopt before swi
 * The compiler is first your enemy, and then your best friend. It takes a while to get used to not working with running code (like in scripting languages) and fix errors along the way. In Rust, you work **with** the compiler to make sure your code is correct *before* it runs.
 * It takes a few weeks to get used to Rust. Once you are, it is hard to go back to a language without such a great type system and compiler. Keep at it, don't try to see progress every day. Give yourself a fixed time slot of 20 days to just work on the course.
 
+In learning programming languages, there can be a moment of "Oh my, what else is there? How much do I need to know?". In Rust, you need to know the following concepts to be able to navigate the language and figure things out for yourself:
+
+* Basic types
+* Creating your own types (via `struct`)
+* Traits
+* Default implemantation of traits
+* Ownership and Borrowing
+* Error handling
+* How to navigate the Rust documentation
+* (Generics, but this is not needed for a while, and not as complex as you might think)
+* (Lifetimes, but you might never face lifetime, and on some level, not as complex as you think)
+* (Macros, but you may not ever need to write your own, and it's just important to know how they generally work)
+
 With this being said, let's have some fun with Rust!
 
 ## Setting up Rust
@@ -183,3 +196,49 @@ io::stdin().read_line(&mut input)?;
 println!("Hello!");  // With newline
 print!("Hello!");    // Without newline
 ```
+
+# Today's Project: Simple Bookmark Storage
+
+We're building a simple program that:
+
+* Asks for URLs
+* Stores them in memory
+* Displays them back
+
+We covered everything you need to know to create this program. But, not everything. For printing out the stored bookmarks, you will have to iterate over a vector.
+
+In the example code for this day, you will find the following snippet to print out the stored bookmarks:
+
+```rust
+for (index, bookmark) in bookmarks.iter().enumerate() {
+    println!("{}. {}", index + 1, bookmark);
+}
+```
+
+## 1. What is an Iterator?
+
+An iterator is an object that allows you to step through (or "iterate over") the elements in a collection, such as a `Vec` (vector) or an `array`, one by one.
+
+In Rust, when you call `.iter()` on a collection like a vector (`Vec`), it returns an `Iterator` that can traverse each element in the vector. The `Iterator` itself is not the data, but a way to access the data, element by element.
+
+If bookmarks is a vector containing three bookmarks:
+
+```rust
+let bookmarks = vec!["Bookmark 1", "Bookmark 2", "Bookmark 3"];
+```
+
+Calling `bookmarks.iter()` gives you an iterator that can be used to access "Bookmark 1", "Bookmark 2", and "Bookmark 3" one by one.
+
+## 2. The .enumerate() Method:
+
+`.enumerate()` is a method that you can call on an `Iterator`, and it modifies the `Iterator`. It makes the `Iterator` return a pair: the index (position) of each element in the collection and the element itself.
+
+## How would I ever know that?
+
+This is where it is important to get behind the idea of strictly typed languages. Every type has capabilities, and working with your bookmarks vector, you have to ask yourself: "What can a vector do?". The easiest way to find out is to have auto-completion and language hints in your IDE:
+
+![Rust autocompletion for your IDE](https://raw.githubusercontent.com/gruberb/rust-in-20-days/day-01/days/ide.png)
+
+Later on, you will have to get used to opening up a browser window, and navigating to the [Rust docs of the iterator](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.enumerate) and find methods it is implementing.
+
+You won't understand all of that as of now, but trust me, you will soon. And once it clicked (it will), it is pretty easy to navigate.
